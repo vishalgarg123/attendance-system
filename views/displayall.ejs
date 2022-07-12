@@ -1,0 +1,106 @@
+<style>
+ body{
+      background-image: url("/images/1.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    .maincontainer{
+      display: flex;
+      justify-content: center;
+    padding-top: 10px;
+      
+      height: 100vh;
+    
+    }
+    .root{
+    width: 1300px;
+    height: auto;
+    background: #fff;
+  border-radius: 50px;
+    padding: 15px;
+    margin: 100px;
+  
+   
+    
+    }
+   
+    .heading{
+    color: #4834d4;
+    
+    font-size: 35px;
+    font-weight: bold;
+  
+    font-family: Syne Mono;
+    
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    
+    
+    }
+    
+    </style>
+    
+    <html>
+    <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<div class="maincontainer">
+<div class="root">
+    <div class="heading">
+        <span><img src="/images/2.png" width="50" ></span> &nbsp;&nbsp; Employee Attendance System
+      </div>
+      <hr>
+    <table class="striped">
+       
+        <thead>
+          <tr>
+              <th>Employee Id</th>
+              <th>Employee Name</th>
+              <th>Department</th>
+              <th>position</th>
+              <th style="align-items: center;">joiningdate</th>
+             <th>Status</th>
+             <th>Update</th>
+           
+          </tr>
+        </thead>
+
+        <tbody>
+<% data.map((item)=>{ %>
+
+          <tr>
+            <td><%=item.Employeeid%></td>
+            <td><%=item.Employeename %> </td>
+           
+            <td><%=item.Department %></td>
+            <td><%=item.Position %></td>
+            <td><%=item.joiningdate %></td>
+          <td><%=item.status %></td>
+          <td><a href="/attendance/displaybyid?Employeeid=<%=item.Employeeid %>">Update</a></td>
+          </tr>
+          <% }) %>
+        
+        </tbody>
+      </table>
+
+
+</div>
+</div>
+<html>
+  <head>
+
+
+
+
+
+
+
+
+
